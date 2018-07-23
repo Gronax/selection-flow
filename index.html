@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Selection Flow</title>
+    <!-- font-awesome.min.css -->
+    <!-- <script src="https://use.fontawesome.com/31126337c9.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- bootstrap.min.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- style.css -->
+    <link rel="stylesheet" href="flow.css" media="screen" charset="utf-8">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="left-container">
+                <div class="hidden-values">
+                    <input type="hidden" id="SelectionOne" name="SelectionOne" value="-1" />
+                    <input type="hidden" id="SelectionTwoId" name="SelectionTwoId" value="-1" />
+                    <input type="hidden" id="SelectionThreeId" name="SelectionThreeId" value="-1" />
+                    <input type="hidden" id="SelectionFourId" name="SelectionFourId" value="-1" />
+                    <input type="hidden" id="GovdeTipiId" name="GovdeTipiId" value="-1" />
+                    <input type="hidden" id="SelectionSixId" name="SelectionSixId" value="-1" />
+                    <input type="hidden" id="SelectionSevenId" name="SelectionSevenId" value="-1" />
+                </div>
+                <!-- /.hidden-values -->
+                <div class="title-section">
+                    <button type="button" class="btn btn-back btn-sm hidden"><i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp;Geri</button>
+                    <span class="title"></span>
+                </div>
+                <!-- /.title-section -->
+                <div class="list-items">
+                    <ul id="SelectionOneList" class="list-item active" data-title="Selection 1">
+                        <li><a id="1">Text<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                        <li><a id="2">2016<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                    </ul>
+                    <ul id="SelectionTwoList" class="list-item hidden" data-title="Selection 2">
+                        <li><a id="3">asd<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                        <li><a id="4">asd<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                    </ul>
+                    <ul id="SelectionThreeList" class="list-item hidden" data-title="Selection 3">
+                        <li><a id="5">item 5<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                        <li><a id="6">item 6<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                    </ul>
+                    <ul id="SelectionFourList" class="list-item hidden" data-title="Selection 4">
+                        <li><a id="7">test<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                        <li><a id="8">test 2<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                        <li><a id="9">test 3<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                    </ul>
+                    <ul id="SelectionFiveList" class="list-item hidden" data-title="Selection 5">
+                        <li><a id="10">new item 2<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                        <li><a id="11">new item 6<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                    </ul>
+                    <ul id="SelectionSixList" class="list-item hidden" data-title="Selection 6">
+                        <li><a id="12">test 5<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                        <li><a id="13">adasd<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                    </ul>
+                    <ul id="SelectionSevenList" class="list-item hidden" data-title="Selection 7">
+                        <li><a id="14">awd<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                        <li><a id="15">awp<span class="list-icon"><i class="fa fa-angle-right fa-lg"></i></span></a></li>
+                    </ul>
+                    <div id="SelectionEightList" class="list-item hidden" data-title="Detail">
+                        div.test
+                    </div>
+                </div>
+                <!-- /.list-items -->
+            </div>
+            <!-- /.left-container -->
+            <div class="right-container">
+                <div class="title-section">Info
+                    <button type="button" class="btn btn-warning btn-new-query btn-sm hidden">New Selection</button>
+                </div>
+                <img src="http://via.placeholder.com/800x600" class="start-img" />
+                <ul class="result-list hidden"></ul>
+            </div>
+            <!-- /.right-container -->
+        </div>
+        <!-- /.wrapper -->
+    </div>
+    <!-- /.container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // başlangıçta aktif olan listin adını title'a yazma
+            $(".title").text($(".left-container").find(".list-item.active").data("title"));
+            $(".btn-new-query").click(function() {
+                location.reload();
+            });
+            // GERİ GİTME
+            $(".btn-back").click(function() {
+                // araç bilgileri kısmından temizlemek
+                var prevStep = $(this).closest('.left-container').find('.list-item.active').prev().data("title");
+                var currentStep = $(this).closest('.left-container').find('.list-item.active').data("title");
+                $(".result-list .result-title").each(function() {
+                    if ($(this).text() == prevStep) {
+                        $(this).closest(".result-item").remove();
+                    }
+                });
+                // geri gitme
+                $(this).closest(".left-container").find(".list-item.active").removeClass("active").addClass("hidden").prev().removeClass("hidden").addClass("active");
+                // sıra ilk listeye geldiğinde geri butonunu kapat
+                if ($(this).closest(".left-container").find(".list-item:first-child").hasClass("active")) {
+                    $(this).addClass("hidden");
+                    $(".btn-new-query, .result-list").addClass("hidden");
+                    // başlangıç resmini göster
+                    $(".start-img").removeClass("hidden");
+                    // yazdırılan araç bilgilerini temizle
+                    $(".result-item").remove();
+                    // tüm hiddenları temizliyorum
+                    $("input[type=hidden]").val("-1");
+                }
+                // title değiştirme
+                $(this).next().text($(this).closest(".left-container").find(".list-item.active").data("title"));
+            });
+            // İLERİ GİTME
+            $(".list-item a").click(function() {
+                var nextTitle = $(this).closest(".list-item").next().data("title");
+                var currentTitle = $(this).closest(".list-item").data("title");
+                var currentText = $(this).text();
+
+                $(".btn-new-query, .btn-back, .result-list").removeClass("hidden");
+                $(".start-img").addClass("hidden");
+                // title yazdırma
+                $(this).closest(".left-container").find(".title").text(nextTitle);
+                // mevcut list'ten sonra başka bir list daha var mı diye kontrol ediyorum
+                if ($(this).closest(".list-item").next().length > 0) {
+                    $(this).closest(".list-item").removeClass("active").addClass("hidden");
+                    $(this).closest(".list-item").next().removeClass("hidden").addClass("active");
+                }
+                $(".result-list").append('<li class="result-item"><div class="row"><span class="result-title col-xs-12 col-md-4 col-lg-3">' + currentTitle + '</span><span class="result-text col-xs-12 col-md-8 col-lg-9">' + currentText +
+                    '</span></div></li>');
+            });
+            $("#SelectionOneList a").click(function() {
+                var ValueID = $(this).prop('id');
+                var ValueText = $(this).text();
+                $("#SelectionOne").val(ValueID);
+            });
+            $("#SelectionTwoList a").click(function() {
+                var ValueID = $(this).prop('id');
+                var ValueText = $(this).text();
+                $("#SelectionTwoId").val(ValueID);
+            });
+            $("#SelectionThreeList a").click(function() {
+                var ValueID = $(this).prop('id');
+                var ValueText = $(this).text();
+                $("#SelectionThreeId").val(ValueID);
+            });
+            $("#SelectionFourList a").click(function() {
+                var ValueID = $(this).prop('id');
+                var ValueText = $(this).text();
+                $("#SelectionFourId").val(ValueID);
+            });
+            $("#SelectionFiveList a").click(function() {
+                var ValueID = $(this).prop('id');
+                var ValueText = $(this).text();
+                $("#GovdeTipiId").val(ValueID);
+            });
+            $("#SelectionSixList a").click(function() {
+                var ValueID = $(this).prop('id');
+                var ValueText = $(this).text();
+                $("#SelectionSixId").val(ValueID);
+            });
+            $("#SelectionSevenList a").click(function() {
+                var ValueID = $(this).prop('id');
+                var ValueText = $(this).text();
+                $("#SelectionSevenId").val(ValueID);
+            });
+        });
+    </script>
+</body>
+
+</html>
